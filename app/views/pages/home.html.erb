@@ -1,10 +1,13 @@
-
-<div class="center hero-unit">
+<% if user_signed_in? %>
 	<h1>Welcome to Dan's homepage</h1>
-	<p>It's an awesome day!</p>
-	<p>This is Dan</p>
-	<p>
-		<%= link_to "Check out our website", "http://bingdow.com", class:"btn btn-primary btn-large" %>
-	</p>
+<%else%>
+	<div class="center hero-unit">
+		<h1>Welcome to Dan's homepage</h1>
+		<p>It's an awesome day!</p>
+		<p>This is Dan</p>
+		<p>
+			<%= link_to "Sign up now", new_user_registration_path, class:"btn btn-primary btn-large" %>
+		</p>
 
-</div>
+	</div>
+<% end %>
